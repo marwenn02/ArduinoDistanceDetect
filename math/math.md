@@ -32,7 +32,7 @@ ESP_distance = 10^((Ptx - RSSI) / (10 * n))
 
 # Trilateration given three points
 here is pseudo code for trilateration on the points A, B, C and distances dA, dB, dC
-
+```js
 function trilateration(A, B, C, dA, dB, dC) -> Point
 
 let ex = vecDivide(vecSub(B, A), norm(vecSub(B, A)))
@@ -47,5 +47,5 @@ let y = (sqrt(dA) - sqrt(dC) + sqrt(i) + sqrt(j)) / (2*j) - (i/j) * x
 
 P = vecAdd(A, vecAdd(vecMult(ex, x), vecMult(ey, y)))
 return P
-
+```
 It is possible to get two answares that are close to eachother but we will ignore this for speed increase.
